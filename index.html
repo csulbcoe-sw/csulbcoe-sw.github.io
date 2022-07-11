@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="icon" href="./images/coe-logo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,8 +25,40 @@
     <div class="description">
         Downloads for CSULB COE.
     </div>
+    <input type="text" class="searchbar" id="searchbarId" onkeyup="myFunction()" placeholder="Search..." title="Type in a name">
 
-    <div class="links">
+<ul id="myUL">
+  <li><a class = "link" href="#">Catia</a></li>
+  <li><a class = "link" href="#">Matlab</a></li>
+
+  <li><a class = "link" href="#">Microsoft Office</a></li>
+  <li><a class = "link" href="#">Solidworks</a></li>
+
+  <li><a class = "link" href="#">Autocad</a></li>
+  <li><a class = "link" href="#">Google Chrome</a></li>
+  <li><a class = "link" href="#">Adobe Creative Suite</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchbarId");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+    <!-- <div class="links">
         <a class="link" href="" target="_blank">
             <i class="fas fa-robot">&nbsp;</i>Catia Student
         </a>
@@ -42,7 +77,7 @@
         <a class="link" href="" target="_blank">
             <i class="fas fa-robot">&nbsp;</i>Autocad
         </a>
-    </div>
+    </div> -->
 
 </body>
 
