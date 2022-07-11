@@ -133,7 +133,7 @@ html, body {
     list-style: none;
     max-width: 400px;
     width: auto;
-    margin: 27px auto;
+    margin: 10px auto;
   }
   
   #myUL li a:hover:not(.header) {
